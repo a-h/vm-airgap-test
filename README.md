@@ -10,6 +10,14 @@ Testing that a Nix copy operation actually copies all of the things needed to bu
 nix build --store ${PWD}/store .#vm
 ```
 
+### rm-result
+
+Don't copy the result over to the airgapped environment. The point is to see if the store has everything needed to build the image.
+
+```bash
+rm -rf result
+```
+
 ### nix-copy
 
 Copy the store over to the VM. On a mac, you might want to add `--no-xattrs` to the `tar` command to stop it adding junk to the tarball.
