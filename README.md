@@ -24,7 +24,7 @@ scp ./vm-airgap-test.tar adrian@192.168.0.97:~/
 Once the store has been copied to the airgapped environment, build the image.
 
 ```bash
-tar -xvzf --warning=no-unknown-keyword vm-airgap-test.tar
+tar -xvzf vm-airgap-test.tar
 cd vm-airgap-test
 nix build --store ${PWD}/store .#vm
 ```
