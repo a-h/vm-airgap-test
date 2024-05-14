@@ -12,6 +12,8 @@
   };
 
   outputs = { self, nixpkgs, nixos-generators, xc }: {
+    inputs = self.inputs;
+    inputOutPaths = nixpkgs.lib.mapAttrs (name: value: value.outPath) self.inputs;
     vm = nixos-generators.nixosGenerate {
       system = "aarch64-linux";
       specialArgs = {

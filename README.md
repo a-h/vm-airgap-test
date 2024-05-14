@@ -8,5 +8,5 @@ Testing that a Nix copy operation actually copies all of the things needed to bu
 
 ```bash
 nix copy --derivation --to file://${PWD}/nix-copy-output/ .#vm
-nix copy --to file://${PWD}/nix-copy-output/ .#vm
+./export-flake-inputs.sh
 ```
